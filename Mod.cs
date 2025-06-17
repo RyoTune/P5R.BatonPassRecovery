@@ -70,7 +70,7 @@ public unsafe class Mod : ModBase
                 hooks.Utilities.GetAbsoluteCallMnemonics(GetBatonPassSpAddImpl, out _batonSpWrapper),
                 Utilities.PopCallerRegisters,
                 "add r15d, eax",
-                hooks.Utilities.GetAbsoluteJumpMnemonics(result + 0xD2, true)
+                hooks.Utilities.GetAbsoluteJumpMnemonics(result + 0xD4, true)
             };
 
             _batonSpHook = hooks.CreateAsmHook(patch, result).Activate();
@@ -83,7 +83,7 @@ public unsafe class Mod : ModBase
 
         ScanHooks.Add("Baton Pass HP Hooks", "0F 84 ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 8B 4D ?? 48 8B 49", (hooks, result) =>
         {
-            var removeHpBatonCheckAddress = result - 0x31;
+            var removeHpBatonCheckAddress = result - 0x2E;
             string[] removeHpBatonCheckPatch =
             [
                 "use64",
