@@ -16,6 +16,6 @@
   "IsUniversalMod": false,
   "ModDependencies": [ "reloaded.sharedlib.hooks", "Reloaded.Memory.SigScan.ReloadedII" ],
   "OptionalDependencies": [],
-  "SupportedAppId": [],
+  "SupportedAppId": [ "p5r.exe" ],
   "ProjectUrl": ""
 }
