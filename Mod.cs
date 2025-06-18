@@ -145,18 +145,18 @@ public unsafe class Mod : ModBase
         {
             try
             {
-                var config = JsonSerializer.Deserialize<Config>(File.ReadAllText(batonConfigFile));
-                if (config == null)
+                var jconfig = JsonSerializer.Deserialize<Config>(File.ReadAllText(batonConfigFile));
+                if (jconfig == null)
                 {
                     return;
                 }
 
-                _config.HP_Level_1 = _config.HP_Level_1;
-                _config.HP_Level_2 = _config.HP_Level_2;
-                _config.HP_Level_3 = _config.HP_Level_3;
-                _config.SP_Level_1 = _config.SP_Level_1;
-                _config.SP_Level_2 = _config.SP_Level_2;
-                _config.SP_Level_3 = _config.SP_Level_3;
+                _config.HP_Level_1 = jconfig.HP_Level_1;
+                _config.HP_Level_2 = jconfig.HP_Level_2;
+                _config.HP_Level_3 = jconfig.HP_Level_3;
+                _config.SP_Level_1 = jconfig.SP_Level_1;
+                _config.SP_Level_2 = jconfig.SP_Level_2;
+                _config.SP_Level_3 = jconfig.SP_Level_3;
                 ApplyHpSettings();
 
                 _configLoaded = true;
